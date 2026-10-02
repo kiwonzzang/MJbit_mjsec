@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MJbit</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@800&text=MJbit&display=swap" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <h1 class="logo">MJbit</h1>
+    <button id="theme-toggle" class="btn ghost" type="button" aria-label="테마 전환">🌙</button>
+  </header>
+
+  <!-- 관심 종목 시세 흐름 (Ticker Tape 위젯) -->
+  <section id="ticker-tape" class="ticker-tape"></section>
+
+  <main class="layout">
+    <!-- 관심 종목 목록 -->
+    <aside class="panel watchlist">
+      <div class="panel-head">
+        <h2>관심 종목</h2>
+        <span class="muted">끌어서 순서 변경</span>
+      </div>
+
+      <nav id="category-tabs" class="tabs" aria-label="카테고리"></nav>
+
+      <ul id="watchlist" class="watchlist-items"></ul>
+
+      <form id="add-form" class="add-form">
+        <h3>종목 추가</h3>
+        <input id="add-symbol" type="text" placeholder="심볼 (예: NASDAQ:MSFT)" required autocomplete="off" />
+        <input id="add-name" type="text" placeholder="표시 이름 (예: 마이크로소프트)" autocomplete="off" />
+        <select id="add-category"></select>
+        <button class="btn primary" type="submit">추가</button>
+        <p id="add-error" class="error" role="alert"></p>
+        <p class="hint">
+          심볼은 <a href="https://www.tradingview.com/symbols/" target="_blank" rel="noopener">TradingView</a>에서
+          검색한 <code>거래소:티커</code> 형식이에요.
+        </p>
+      </form>
+    </aside>
+
+    <!-- 차트 -->
+    <section class="panel chart-panel">
+      <div class="panel-head">
+        <h2 id="chart-title">차트</h2>
+        <span id="chart-symbol" class="muted"></span>
+      </div>
+      <div id="chart" class="widget-slot"></div>
+    </section>
+
+    <!-- 뉴스 -->
+    <section class="panel news-panel">
+      <div class="panel-head">
+        <h2>뉴스</h2>
+        <div class="segmented" role="group" aria-label="뉴스 범위">
+          <button type="button" data-news-mode="symbol">이 종목</button>
+          <button type="button" data-news-mode="all">전체 시장</button>
+        </div>
+      </div>
+      <div id="news" class="widget-slot"></div>
+    </section>
+  </main>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
