@@ -1,0 +1,27 @@
+{
+  "name": "website-project",
+  "version": "1.0.0",
+  "description": "이 프로젝트에 대한 설명을 여기에 작성합니다.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kiwonzzang/MJbit.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/kiwonzzang/MJbit/issues"
+  },
+  "homepage": "https://github.com/kiwonzzang/MJbit#readme",
+  "dependencies": {
+    "axios": "^1.20.0",
+    "cors": "^2.8.6",
+    "express": "^5.2.1"
+  }
+}
